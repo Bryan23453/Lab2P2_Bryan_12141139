@@ -118,6 +118,7 @@ public class Lab2P2_Bryan_12141139 {
                             }
                             if (rep==true) {
                                 System.out.println(anima.get(o).toString());
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             }else{
                                 System.out.println("no se encontro el nombre cientifico ");
                                 System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -128,41 +129,163 @@ public class Lab2P2_Bryan_12141139 {
                     }
                 }else{
                     if (op==3){
+                        System.out.println("Ingrese nombre cientifico ");
+                            String nom=n.nextLine();
+                            nom=n.nextLine();
+                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            boolean rep=true;
+                            int e=0,E=0,o=0;
+                            for (animal Animal : anima) {
+                                 if (! nom.equals(Animal.getNom_cien())) {
+                                    e++;
+                                }else{
+                                 o=e;
+                                }
+                                 E++;
+                            }
+                            if (e==E) {
+                                rep=false;
+                            }
+                            if (rep==true) {
+                                System.out.println("Datos Encontrados");
+                                System.out.println(anima.get(o).toString());
+                                anima.remove(o);
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                System.out.println("Datos Encontrados Eliminados Exitosamente");
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            }else{
+                                System.out.println("no se encontro el nombre cientifico ");
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            }
+                            
+                            /*
                         System.out.println("ingrese pocicion a Eliminar");
                         int eli=n.nextInt();
                         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                        anima.remove(eli);
-                        /*java.lang.IndexOutOfBoundsException
-                        try{
-                            System.out.println("No existe esa pocion");
-                        }
-                        catch(Exception e) {
-                            System.out.println("No existe esa pocion");
-                        }*/
-                        
+                        try {
+                            
+                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                        } catch (Exception e) {
+                            System.out.println("No existe esa opcion");
+                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                          }*/
                     }else{
                         if (op==4){
-                            System.out.println("ingrese pocision");
-                            int poss=n.nextInt();
+                            System.out.println("Ingrese nombre cientifico ");
+                            String nom=n.nextLine();
+                            nom=n.nextLine();
                             System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                            System.out.println("1- editar 1 solo atributo");
-                            System.out.println("2- editar todos los atributos");
-                            int pos=n.nextInt();
-                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                            if (pos==1) {
-                                System.out.println("1- editar nombre científico");
-                                System.out.println("2- editar nombre común");
-                                System.out.println("3- editar hábitat");
-                                System.out.println("4- editar alimentación");
-                                System.out.println("5- editar descripción de rasgos");
-                                System.out.println("6- editar distribución geográfica");
-                                System.out.println("7- editar edad");
+                            boolean rep=true;
+                            int e=0,E=0,o=0;
+                            int poss=0;
+                            for (animal Animal : anima) {
+                                 if (! nom.equals(Animal.getNom_cien())) {
+                                    e++;
+                                }else{
+                                 o=e;
+                                }
+                                 E++;
+                            }
+                            if (e==E) {
+                                rep=false;
+                            }
+                            if (rep==true) {
+                                System.out.println("Datos Encontrados");
                                 System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                int cam=n.nextInt();
-                                switch (cam){
-                                    case 1:{
-                                        boolean A=false;
+                                System.out.println(anima.get(o).toString());
+                                poss=o;
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                System.out.println("1- editar 1 solo atributo");
+                                System.out.println("2- editar todos los atributos");
+                                int pos=n.nextInt();
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                if (pos==1) {
+                                    System.out.println("1- editar nombre científico");
+                                    System.out.println("2- editar nombre común");
+                                    System.out.println("3- editar hábitat");
+                                    System.out.println("4- editar alimentación");
+                                    System.out.println("5- editar descripción de rasgos");
+                                    System.out.println("6- editar distribución geográfica");
+                                    System.out.println("7- editar edad");
+                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                    int cam=n.nextInt();
+                                    switch (cam){
+                                        case 1:{
+                                            boolean A=false;
+                                            String nomcien=n.nextLine();
+                                            while (A==false){
+                                                A=true;
+                                                System.out.println("ingrese nombre científico");
+                                                nomcien=n.nextLine();
+                                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                for (animal Animal : anima) {
+                                                    if (nomcien.equals(Animal.getNom_cien())) {
+                                                        A=false;
+                                                        break;
+                                                    }
+                                                }
+                                                if (A==false) {
+                                                    System.out.println("no puede haber 2 perros con el mismo nombre cientifico ingrese otro nombre");
+                                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                }
+                                            }
+                                            anima.get(poss).setNom_cien(nomcien);
+                                        }
+                                        break;
+                                        case 2:{
+                                            System.out.println("ingrese nombre común");
+                                            String nomcom=n.nextLine();
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                            anima.get(poss).setNom_com(nomcom);
+                                        }
+                                        break;
+                                        case 3:{
+                                            System.out.println("ingrese hábitat");
+                                            String hab=n.nextLine();
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                            anima.get(poss).setHabitat(hab);
+                                        }
+                                        break;
+                                        case 4:{
+                                            System.out.println("ingrese alimentación");
+                                            String alime=n.nextLine();
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                            anima.get(poss).setAlimentacion(alime);
+                                        }
+                                        break;
+                                        case 5:{
+                                            System.out.println("ingrese descripción de rasgos");
+                                            String ras=n.nextLine();
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                            anima.get(poss).setRasgos(ras);
+                                        }
+                                        break;
+                                        case 6:{
+                                            System.out.println("ingrese distribución geográfica");
+                                            String distr=n.nextLine();
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                            anima.get(poss).setDis_geo(distr);
+                                        }
+                                        break;
+                                        case 7:{
+                                            int vida=0;
+                                            while (vida<1) {
+                                                System.out.println("ingrese edad");
+                                                vida=n.nextInt();
+                                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                if (vida<1) {
+                                                    System.out.println("Ingrese un valor mayor a 0");
+                                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                }
+                                            }
+                                            anima.get(poss).setEdad(vida);
+                                        }
+                                        break;
+                                    }
+                                }else{
+                                    if (pos==2) {
                                         String nomcien=n.nextLine();
+                                        boolean A=false;
                                         while (A==false){
                                             A=true;
                                             System.out.println("ingrese nombre científico");
@@ -179,45 +302,21 @@ public class Lab2P2_Bryan_12141139 {
                                                 System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                             }
                                         }
-                                        anima.get(poss).setNom_cien(nomcien);
-                                    }
-                                    break;
-                                    case 2:{
                                         System.out.println("ingrese nombre común");
                                         String nomcom=n.nextLine();
                                         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                        anima.get(poss).setNom_com(nomcom);
-                                    }
-                                    break;
-                                    case 3:{
                                         System.out.println("ingrese hábitat");
                                         String hab=n.nextLine();
                                         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                        anima.get(poss).setHabitat(hab);
-                                    }
-                                    break;
-                                    case 4:{
                                         System.out.println("ingrese alimentación");
                                         String alime=n.nextLine();
                                         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                        anima.get(poss).setAlimentacion(alime);
-                                    }
-                                    break;
-                                    case 5:{
                                         System.out.println("ingrese descripción de rasgos");
                                         String ras=n.nextLine();
                                         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                        anima.get(poss).setRasgos(ras);
-                                    }
-                                    break;
-                                    case 6:{
                                         System.out.println("ingrese distribución geográfica");
                                         String distr=n.nextLine();
                                         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                        anima.get(poss).setDis_geo(distr);
-                                    }
-                                    break;
-                                    case 7:{
                                         int vida=0;
                                         while (vida<1) {
                                             System.out.println("ingrese edad");
@@ -228,75 +327,55 @@ public class Lab2P2_Bryan_12141139 {
                                                 System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                             }
                                         }
+                                        anima.get(poss).setNom_cien(nomcien);
+                                        anima.get(poss).setNom_com(nomcom);
+                                        anima.get(poss).setHabitat(hab);
+                                        anima.get(poss).setAlimentacion(alime);
+                                        anima.get(poss).setRasgos(ras);
+                                        anima.get(poss).setDis_geo(distr);
                                         anima.get(poss).setEdad(vida);
+
                                     }
-                                    break;
                                 }
+                                
                             }else{
-                                if (pos==2) {
-                                    String nomcien=n.nextLine();
-                                    boolean A=false;
-                                    while (A==false){
-                                        A=true;
-                                        System.out.println("ingrese nombre científico");
-                                        nomcien=n.nextLine();
-                                        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                        for (animal Animal : anima) {
-                                            if (nomcien.equals(Animal.getNom_cien())) {
-                                                A=false;
-                                                break;
-                                            }
-                                        }
-                                        if (A==false) {
-                                            System.out.println("no puede haber 2 perros con el mismo nombre cientifico ingrese otro nombre");
-                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                        }
-                                    }
-                                    System.out.println("ingrese nombre común");
-                                    String nomcom=n.nextLine();
-                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                    System.out.println("ingrese hábitat");
-                                    String hab=n.nextLine();
-                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                    System.out.println("ingrese alimentación");
-                                    String alime=n.nextLine();
-                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                    System.out.println("ingrese descripción de rasgos");
-                                    String ras=n.nextLine();
-                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                    System.out.println("ingrese distribución geográfica");
-                                    String distr=n.nextLine();
-                                    System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                    int vida=0;
-                                    while (vida<1) {
-                                        System.out.println("ingrese edad");
-                                        vida=n.nextInt();
-                                        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                        if (vida<1) {
-                                            System.out.println("Ingrese un valor mayor a 0");
-                                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                        }
-                                    }
-                                    anima.get(poss).setNom_cien(nomcien);
-                                    anima.get(poss).setNom_com(nomcom);
-                                    anima.get(poss).setHabitat(hab);
-                                    anima.get(poss).setAlimentacion(alime);
-                                    anima.get(poss).setRasgos(ras);
-                                    anima.get(poss).setDis_geo(distr);
-                                    anima.get(poss).setEdad(vida);
-                                    
-                                }
+                                System.out.println("no se encontro el nombre cientifico ");
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             }
+                            
+                            
                         }else{
                             if (op==5) {
-                                System.out.println("ingrese pocision del perro aliemtado");
+                        int poss=0;
+                        boolean H=true;
+                        try {
+                            System.out.println("ingrese pocision del perro alimentado");
+                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            poss=n.nextInt();
+                            anima.get(poss);
+                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                        } catch (Exception e) {
+                            System.out.println("No existe esa pocicion");
+                            H=false;
+                            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                        }
+                        if (H) {
+                            int poss2=0;
+                            try {
+                            System.out.println("ingrese pocision del perro que sera comido");
                                 System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                int poss=n.nextInt();
-                                System.out.println("ingrese pocision del perro que sera comido");
-                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                int poss2=n.nextInt();
+                                poss2=n.nextInt();
                                 anima.get(poss).setEdad(anima.get(poss).getEdad()+anima.get(poss2).getEdad());
                                 anima.remove(poss2);
+                            } catch (Exception e) {
+                                System.out.println("No existe esa pocicion");
+                                System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            }
+                        }
+                        
+                        
+                        
+                                
                             }
                         }
                     }
