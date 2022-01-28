@@ -73,7 +73,27 @@ public class Lab2P2_Bryan_12141139 {
                         }
                         break;
                         case 3:{
-
+                            System.out.println("Ingrese nombre cientifico ");
+                            String nom=n.nextLine();
+                            nom=n.nextLine();
+                            boolean rep=true;
+                            int e=0,E=0,o=0;
+                            for (animal Animal : lista) {
+                                 if (! nom.equals(Animal.getNom_cien())) {
+                                    e++;
+                                }else{
+                                 o=e;
+                                }
+                                 E++;
+                            }
+                            if (e==E) {
+                                rep=false;
+                            }
+                            if (rep==true) {
+                                System.out.println(lista.get(o).toString());
+                            }else{
+                                System.out.println("no se encontro el nombre cientifico ");
+                            }
                         }
                         break;
 
