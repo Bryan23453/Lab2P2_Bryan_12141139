@@ -100,7 +100,9 @@ public class Lab2P2_Bryan_12141139 {
                     }
                 }else{
                     if (op==3){
-
+                        System.out.println("ingrese pocicion a Eliminar");
+                        int eli=n.nextInt();
+                        lista.remove(eli);
                     }else{
                         if (op==4){
 
