@@ -251,6 +251,15 @@ public class Lab2P2_Bryan_12141139 {
                                     
                                 }
                             }
+                        }else{
+                            if (op==5) {
+                                System.out.println("ingrese pocision del perro aliemtado");
+                                int poss=n.nextInt();
+                                System.out.println("ingrese pocision del perro que sera comido");
+                                int poss2=n.nextInt();
+                                anima.get(poss).setEdad(anima.get(poss).getEdad()+anima.get(poss2).getEdad());
+                                anima.remove(poss2);
+                            }
                         }
                     }
 
