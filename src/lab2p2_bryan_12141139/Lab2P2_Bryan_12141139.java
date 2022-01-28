@@ -30,9 +30,22 @@ public class Lab2P2_Bryan_12141139 {
             System.out.println("6- salir");
              op=n.nextInt();
             if (op==1) {
-                System.out.println("ingrese nombre científico");
+                boolean A=false;
                 String nomcien=n.nextLine();
-                nomcien=n.nextLine();
+                while (A==false){
+                    A=true;
+                    System.out.println("ingrese nombre científico");
+                    nomcien=n.nextLine();
+                    for (animal Animal : anima) {
+                        if (nomcien.equals(Animal.getNom_cien())) {
+                            A=false;
+                            break;
+                        }
+                    }
+                    if (A==false) {
+                        System.out.println("no puede haber 2 perros con el mismo nombre cientifico ingrese otro nombre");
+                    }
+                }
                 System.out.println("ingrese nombre común");
                 String nomcom=n.nextLine();
                 System.out.println("ingrese hábitat");
@@ -127,12 +140,89 @@ public class Lab2P2_Bryan_12141139 {
                                 System.out.println("5- editar descripción de rasgos");
                                 System.out.println("6- editar distribución geográfica");
                                 System.out.println("7- editar edad");
-                                
+                                int cam=n.nextInt();
+                                switch (cam){
+                                    case 1:{
+                                        boolean A=false;
+                                        String nomcien=n.nextLine();
+                                        while (A==false){
+                                            A=true;
+                                            System.out.println("ingrese nombre científico");
+                                            nomcien=n.nextLine();
+                                            for (animal Animal : anima) {
+                                                if (nomcien.equals(Animal.getNom_cien())) {
+                                                    A=false;
+                                                    break;
+                                                }
+                                            }
+                                            if (A==false) {
+                                                System.out.println("no puede haber 2 perros con el mismo nombre cientifico ingrese otro nombre");
+                                            }
+                                        }
+                                        anima.get(poss).setNom_cien(nomcien);
+                                    }
+                                    break;
+                                    case 2:{
+                                        System.out.println("ingrese nombre común");
+                                        String nomcom=n.nextLine();
+                                        anima.get(poss).setNom_com(nomcom);
+                                    }
+                                    break;
+                                    case 3:{
+                                        System.out.println("ingrese hábitat");
+                                        String hab=n.nextLine();
+                                        anima.get(poss).setHabitat(hab);
+                                    }
+                                    break;
+                                    case 4:{
+                                        System.out.println("ingrese alimentación");
+                                        String alime=n.nextLine();
+                                        anima.get(poss).setAlimentacion(alime);
+                                    }
+                                    break;
+                                    case 5:{
+                                        System.out.println("ingrese descripción de rasgos");
+                                        String ras=n.nextLine();
+                                        anima.get(poss).setRasgos(ras);
+                                    }
+                                    break;
+                                    case 6:{
+                                        System.out.println("ingrese distribución geográfica");
+                                        String distr=n.nextLine();
+                                        anima.get(poss).setDis_geo(distr);
+                                    }
+                                    break;
+                                    case 7:{
+                                        int vida=0;
+                                        while (vida<1) {
+                                            System.out.println("ingrese edad");
+                                            vida=n.nextInt();
+                                            if (vida<1) {
+                                                System.out.println("Ingrese un valor mayor a 0");
+                                            }
+                                        }
+                                        anima.get(poss).setEdad(vida);
+                                    }
+                                    break;
+                                }
                             }else{
                                 if (pos==2) {
-                                    System.out.println("ingrese nombre científico");
                                     String nomcien=n.nextLine();
-                                    nomcien=n.nextLine();
+                                    boolean A=false;
+                                    while (A==false){
+                                        A=true;
+                                        System.out.println("ingrese nombre científico");
+                                        nomcien=n.nextLine();
+                                        for (animal Animal : anima) {
+                                            if (nomcien.equals(Animal.getNom_cien())) {
+                                                A=false;
+                                                break;
+                                            }
+                                        }
+                                        if (A==false) {
+                                            System.out.println("no puede haber 2 perros con el mismo nombre cientifico ingrese otro nombre");
+                                        }
+                                    }
                                     System.out.println("ingrese nombre común");
                                     String nomcom=n.nextLine();
                                     System.out.println("ingrese hábitat");
