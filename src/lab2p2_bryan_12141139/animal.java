@@ -91,7 +91,7 @@ public class animal {
 
     @Override
     public String toString() {
-        return "animal{" + "nombre_cientifico=" + nom_cien + ", nom_com=" + nom_com + ", habitat=" + habitat + ", alimentacion=" + alimentacion + ", rasgos=" + rasgos + ", dis_geo=" + dis_geo + ", edad=" + edad + '}';
+        return "animal{" + "nombre cientifico: " + nom_cien + ", nombre comun: " + nom_com + ", habitat: " + habitat + ", alimentacion: " + alimentacion + ", rasgos:" + rasgos + ", distribución geográfica: " + dis_geo + ", Años: " + edad + '}';
     }
     
 }
